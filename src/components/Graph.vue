@@ -35,6 +35,14 @@ export default {
     this.addLabels()
     this.addAxes()
   },
+  watch: {
+    dataset () {
+      console.log('BIMBIM', this.dataset)
+      this.animateLoad()
+      this.addLabels()
+      this.addAxes()
+    }
+  },
   data: () => ({
     svgWidth: 0,
     redrawToggle: true

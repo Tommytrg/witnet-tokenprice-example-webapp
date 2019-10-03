@@ -43,12 +43,13 @@ export default {
   computed: {
     ...mapState({
       polls: state => {
+        console.log('new Poll')
         return state.polls
       }
     })
   },
   beforeCreate () {
-    this.$store.dispatch('fetchPolls')
+    // this.$store.dispatch('fetchPolls')
   },
   methods: {
     getStatusColor (status) {

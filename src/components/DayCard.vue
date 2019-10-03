@@ -76,13 +76,15 @@ export default {
   },
   data () {
     return {
-      hasBets: true,
       showForm: true
     }
   },
   computed: {
     STATES () {
       return STATES
+    },
+    hasBets () {
+      return !!this.myBets
     },
     isMediumViewport () {
       return window.innerWidth > SMALL_VIEWPORT_BREAKPOINT

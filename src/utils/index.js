@@ -80,7 +80,7 @@ export async function getContract (web3Provider) {
   }
 }
 
-export async function getTotalTokensAmountByDay (contractInstance, day) {
+export async function getTotalTokensAmountByDay (contractInstance, day, fromWeiFn) {
   const tokens = { }
 
   for (let token of TOKENS) {
@@ -88,7 +88,7 @@ export async function getTotalTokensAmountByDay (contractInstance, day) {
     tokens[token.ticker] = {
       name: token.name,
       ticker: token.ticker,
-      amount
+      amount: fromWeiFn(amount)
     }
   }
 
